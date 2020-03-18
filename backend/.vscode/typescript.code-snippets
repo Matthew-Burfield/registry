@@ -1,0 +1,27 @@
+{
+  "newcontrollers": {
+    "scope": "typescript",
+    "prefix": "newcontrollers",
+    "body": [
+      "import { RequestHandler } from 'express';",
+      "",
+      "${1:controller}"
+    ],
+    "description": "starts a new controller file. Ctrl+space to make your first controller"
+  },
+
+  "controller": {
+    "scope": "typescript",
+    "prefix": "controller",
+    "body": [
+      "export const $1: RequestHandler = async (req, res, next) => {",
+      "  try {",
+      "    $0",
+      "  } catch(err){",
+      "    next(err);",
+      "  }",
+      "}"
+    ],
+    "description": "creates a route controller function"
+  }
+}

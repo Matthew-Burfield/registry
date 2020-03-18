@@ -1,0 +1,36 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "rules": {
+    "semi": ["error", "always"],
+    "quotes": ["error", "double"],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-explicit-any": 1,
+    "@typescript-eslint/no-inferrable-types": [
+      "warn",
+      {
+        "ignoreParameters": true
+      }
+    ],
+    // if you have a parameter that isn't used add an underscore ...
+    // ... at the front to ignore it, i.e. (_req, res, next) ...
+    // ... consequently, ESLint will ignore the _req param above
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "all",
+        "ignoreRestSiblings": false,
+        "argsIgnorePattern": "^_"
+      }
+    ]
+  }
+}
